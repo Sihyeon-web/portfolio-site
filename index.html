@@ -3,9 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>포트폴리오</title>
+        <!--파비콘-->
+    <!--파비콘(favicon.ico)은 프로젝트 최상위 폴더(Root) 경로에 포함시키면 자동으로 적용
+        최상위 경로에 없거나, ico가 아닌 별도 파일 가진 경우에는 <link>로 적용
+    -->                 
+    <link rel="icon" href="favicon.ico">
+    <!--(참고) 파비콘 만들기: https://iconifier.net-->
+    <!--reset.css적용-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+
+    <!-- 구글 웹폰트 연결 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!--구글 마테리얼 아이콘 연결-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/card_test.css">
+    <script defer src="js/main.js"></script> <!--바디 태그 아래에 넣는 대신 defer 사용가능-->
+    <script defer src="js/card_test01.js"></script>
 </head>
 <body>
-  
+  <!-- HEADER -->
+  <header>
+    <div class="inner">
+      <!-- 로고 -->
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="로고">
+      </a>
+      <!-- 메뉴 -->
+      <nav>
+        <ul>
+          <!-- 본인의 메뉴 구조에 맞게 변경 -->
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skill">SKILL</a></li>
+          <li><a href="#project">PROJECT</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- VISUAL -->
+  <!-- 첫 화면에 눈길을 끌 수 있는 자기소개 내용 담기 -->
+
+  <section class="visual">
+    <div class="inner">
+      <h1>
+        <span class="animate-flash" style="animation-delay: 0.04s;">반</span>
+          <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
+          <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
+          <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
+          &nbsp;
+          <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
+          <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
+          <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
+          <br>
+          <span class="animate-flash" style="animation-delay: 0.06s;">레</span>
+          <span class="animate-flash" style="animation-delay: 0.28s;">어</span>
+          <span class="animate-flash" style="animation-delay: 0.12s;">카</span>
+          <span class="animate-flash" style="animation-delay: 0.15s;">드</span>
+          &nbsp;
+          <span class="animate-flash" style="animation-delay: 0.02s;">풀</span>
+          <span class="animate-flash" style="animation-delay: 0.22s;">스</span>
+          <span class="animate-flash" style="animation-delay: 0.17s;">택</span>
+          <!-- <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
+          <span class="animate-flash" style="animation-delay: 0.20s;">k</span> -->
+          &nbsp;<br class="mobile-lf" style="display: none;"><br>
+          <span class="animate-flash purple" style="animation-delay: 0.11s;">D</span>
+          <span class="animate-flash purple" style="animation-delay: 0.18s;">e</span>
+          <span class="animate-flash purple" style="animation-delay: 0.05s;">v</span>
+          <span class="animate-flash purple" style="animation-delay: 0.06s;">e</span>
+          <span class="animate-flash purple" style="animation-delay: 0.09s;">l</span>
+          <span class="animate-flash purple" style="animation-delay: 0.24s;">o</span>
+          <span class="animate-flash purple" style="animation-delay: 0.28s;">p</span>
+          <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
+          <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
+          <br>
+          <span class="animate-flash purple" style="animation-delay: 0.10s;">백</span>
+          <span class="animate-flash purple" style="animation-delay: 0.16s;">시</span>
+          <span class="animate-flash purple" style="animation-delay: 0.24s;">현</span>
+          <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
+          <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
+          <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
+          <span class="animate-flash" style="animation-delay: 0.13s;">.</span>
+      </h1>
+      <div class="container">
+          <div class="overlay"></div>
+          <div class="card"><img src="/images/제목 없음-1.png" alt=""></div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
