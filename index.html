@@ -19,13 +19,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <!--구글 마테리얼 아이콘 연결-->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="css/card_test.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script defer src="js/main.js"></script> <!--바디 태그 아래에 넣는 대신 defer 사용가능-->
-    <script defer src="js/card_test01.js"></script>
+    <script defer src="js/card.js"></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -49,7 +53,6 @@
   </header>
   <!-- VISUAL -->
   <!-- 첫 화면에 눈길을 끌 수 있는 자기소개 내용 담기 -->
-
   <section class="visual">
     <div class="inner">
       <h1>
@@ -62,10 +65,10 @@
           <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
           <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
           <br>
-          <span class="animate-flash" style="animation-delay: 0.06s;">레</span>
-          <span class="animate-flash" style="animation-delay: 0.28s;">어</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">카</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">드</span>
+          <span class="animate-flash purple" style="animation-delay: 0.06s;">레</span>
+          <span class="animate-flash purple" style="animation-delay: 0.28s;">어</span>
+          <span class="animate-flash purple" style="animation-delay: 0.12s;">카</span>
+          <span class="animate-flash purple" style="animation-delay: 0.15s;">드</span>
           &nbsp;
           <span class="animate-flash" style="animation-delay: 0.02s;">풀</span>
           <span class="animate-flash" style="animation-delay: 0.22s;">스</span>
@@ -73,14 +76,15 @@
           <!-- <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
           <span class="animate-flash" style="animation-delay: 0.20s;">k</span> -->
           &nbsp;<br class="mobile-lf" style="display: none;"><br>
-          <span class="animate-flash purple" style="animation-delay: 0.11s;">D</span>
-          <span class="animate-flash purple" style="animation-delay: 0.18s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.05s;">v</span>
-          <span class="animate-flash purple" style="animation-delay: 0.06s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.09s;">l</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">o</span>
-          <span class="animate-flash purple" style="animation-delay: 0.28s;">p</span>
-          <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
+          <span class="animate-flash" style="animation-delay: 0.11s;">디</span>
+          <span class="animate-flash" style="animation-delay: 0.18s;">벨</span>
+          <span class="animate-flash" style="animation-delay: 0.05s;">로</span>
+          <span class="animate-flash" style="animation-delay: 0.06s;">퍼</span>
+          &nbsp;<br class="mobile-lf" style="display: none;">
+          <span class="animate-flash purple" style="animation-delay: 0.09s;">백</span>
+          <span class="animate-flash purple" style="animation-delay: 0.24s;">시</span>
+          <span class="animate-flash purple" style="animation-delay: 0.28s;">현</span>
+          <!-- <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
           <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
           <br>
           <span class="animate-flash purple" style="animation-delay: 0.10s;">백</span>
@@ -89,13 +93,179 @@
           <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
           <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
           <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
-          <span class="animate-flash" style="animation-delay: 0.13s;">.</span>
+          <span class="animate-flash" style="animation-delay: 0.13s;">.</span> -->
       </h1>
-      <div class="container">
-          <div class="overlay"></div>
-          <div class="card"><img src="/images/제목 없음-1.png" alt=""></div>
+      <div class="cardContainer">
+          <div class="card">
+              <div class="card__shine"></div>
+              <div class="overlay"></div>
+              <img src="/images/제목 없음-1.png" alt="">
+          </div>
       </div>
     </div>
   </section>
+  <section id="about" class="about">
+    <div class="inner">
+      <h2 class="title">ABOUT</h2>
+      <div class="about__wrapper">
+        <div class="about__img">
+          <!-- 본인 프로필 이미지 넣기 -->
+          <img src="/images/profile.jpg" alt="">
+        </div>
+        <!-- 본인 슬로건, 이름, 학력 또는 교육 사항 등 작성 -->
+        <div class="about__text">
+          <strong class="slogan">2성만 달아도 5성급</strong>
+          <h3>Baek Sihyeon (2002.04.01)</h3>
+          <div>
+            <h4>EDUCATION</h4>
+            <ul>
+              <li>2021.03 ~ 2024.03 (중퇴) 세종대학교 패션디자인학과</li>
+              <li>YYYY.MM ~ YYYY.MM (수료) 클라우드(AWS)활용 자바/스프링 개발 부트캠프</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- 연락처 버튼 -->
+      <div class="about__btn">
+        <a href="#contact">
+          <img src="images/icon/icon_contact.png" alt="연락처">CONTACT
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="skill" class="skill scroll-spy">
+    <div class="inner">
+      <h2 class="title">SKILL</h2>
+      <ul class="skill__list">
+        <li>
+          <h3>Java</h3>
+          <h4>Java<br>Programing</h4>
+          <ul>
+            <li>객체지향</li>
+            <li>파일 입출력</li>
+            <li>JDBC</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Html</h3>
+          <h4>HTML5</h4>
+          <ul>
+            <li>웹페이지 구조 설계</li>
+            <li>시맨틱 태그</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Css</h3>
+          <h4>CSS3</h4>
+          <ul>
+            <li>웹페이지 레이아웃 설계</li>
+            <li>웹페이지 디자인</li>
+            <li>반응형 제작</li>
+          </ul>
+        </li>
+        <li>
+          <h3>Js</h3>
+          <h4>JavaScript</h4>
+          <ul>
+            <li>DOM 조작, 제어</li>
+            <li>이벤트 처리</li>
+            <li>비동기 통신</li>
+          </ul>
+        </li>
+        <li>
+          <h3>React</h3>
+          <h4>React JS</h4>
+          <ul>
+            <li>SPA 개발</li>
+            <li>전역 상태 관리</li>
+            <li>클라이언트 라우팅</li>
+            <li>CSR 방식 앱개발</li>
+          </ul>
+        </li>
+      </ul>
+      </ul>
+    </div>
+  </section>
+  <section id="project" class="project">
+    <div class="inner">
+      <h2 class="title">PROJECT</h2>
+      <div class="port">
+        <div class="port__img">
+          <!-- 이미지 슬라이드 -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/work_1.jpg" alt="산출물1">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/work_2.jpg" alt="산출몰2">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="port__text">
+          <!-- 프로젝트 설명 -->
+          <h3>프로젝트명</h3>
+          <ul>
+            <li><span>주요 기능 : </span>주요 기능 설명</li>
+            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
+            <li><span>GitHub : </span>깃허브 주소</li>
+            <li><span>URL : </span>배포 주소</li>
+          </ul>
+          <div class="btn-group">
+            <a href="javascript:void(0)" class="btn">README</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_1.jpg">이미지</a>
+          </div>
+        </div>
+      </div>
+      <div class="port">
+        <div class="port__img">
+          <!-- 이미지 슬라이드 -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/work_3.jpg" alt="산출물1">
+              </div>
+              <div class="swiper-slide">
+                <img src="images/work_4.jpg" alt="산출몰2">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+        <div class="port__text">
+          <!-- 프로젝트 설명 -->
+          <h3>프로젝트명</h3>
+          <ul>
+            <li><span>주요 기능 : </span>주요 기능 설명</li>
+            <li><span>적용 기술 : </span>HTML, CSS, JS, React, Java, Spring Boot</li>
+            <li><span>GitHub : </span>깃허브 주소</li>
+            <li><span>URL : </span>배포 주소</li>
+          </ul>
+          <div class="btn-group">
+            <a href="javascript:void(0)" class="btn">README</a>
+            <a href="javascript:void(0)" class="btn btn--brown btn-modal-image" data-image-src="images/work_3.jpg">이미지</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- IMAGE MODAL -->
+  <div id="imageModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        이미지
+        <span class="material-symbols-outlined btn-close">close</span>
+      </div>
+      <div class="modal-body">
+        <img src="data:image/gif;base64,R01GOD1hAQABAAD/ACwAAAAAAQABAAACADs=" alt="이미지">
+      </div>
+    </div>
+  </div>
 </body>
 </html>
