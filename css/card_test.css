@@ -1,8 +1,6 @@
-  .cardContainer {
-    width: 150px; transition : all 0.1s;
-    position: relative;
-  }
+
 /* 기존 .overlay 블록을 아래로 교체 */
+
 .overlay {
   position: absolute; left: 0; top: 0;
   width: 100%; height: 100%;
@@ -10,8 +8,8 @@
   border-radius: 12px;
 
   /* 포인터 스팟 파라미터 */
-  --mx: 50%;           /* 포인터 x(%) */
-  --my: 50%;           /* 포인터 y(%) */
+  --mx: 50%;   /*margin left and right*/        /* 포인터 x(%) */
+  --my: 50%;   /*margin top and bottom*/        /* 포인터 y(%) */
   --ov-size: 30%;      /* 밝은 영역 크기 */
   --ov-falloff: 70%;   /* 스팟이 사라지는 지점 */
   --ov-intensity: 0.75;/* 중심 밝기(0~1 추천) */
@@ -36,17 +34,14 @@
 
   .card{
     position: relative;
-    width: 150px; height: 280px;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .card img{
-    width: 100%; height: 100%;
-    object-fit: cover;
+
+
+    will-change: transform;
   }
 
   .card__shine {
-    position: absolute; inset:0;
+    position: absolute; 
+    inset:0; /*부모 영역을 완전히 덮음*/
     pointer-events: none;
     --space: 2px; --h: 21; --s: 70%; --l: 50%;
     --bars: 24px; --bar-color: rgba(255,255,255,.6); --bar-bg: rgb(10,10,10);
@@ -57,11 +52,11 @@
     background-image:
     /* 색 스트라이프(슬림 버전) */
     repeating-linear-gradient(90deg,
-      hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0),
-      hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*1),
-      black calc(var(--space)*1.001), black calc(var(--space)*1.999),
-      hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*2),
-      hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*3)
+    hsl(calc(var(--h)*0), var(--s), var(--l)) calc(var(--space)*0),
+    hsl(calc(var(--h)*1), var(--s), var(--l)) calc(var(--space)*1),
+    black calc(var(--space)*1.001), black calc(var(--space)*1.999),
+    hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*2),
+    hsl(calc(var(--h)*2), var(--s), var(--l)) calc(var(--space)*3)
     ),
     /* 무지개 대역 */
     repeating-linear-gradient(90deg, var(--vio), var(--blu), var(--gre), var(--yel), var(--red), var(--vio)),

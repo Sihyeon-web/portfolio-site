@@ -169,14 +169,6 @@ header nav ul li a:hover::after{
   width: 70vh;
 }
 
-/* .visual > .inner .cardContainer{
-  position:fixed;
-  
-} */
-.visual > .inner img{
-  width: 150px;
-}
-
 .about {
   padding: 150px 0;
 }
