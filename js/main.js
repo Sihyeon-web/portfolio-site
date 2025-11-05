@@ -48,3 +48,36 @@ imageModalBtnList.forEach((e)=>{
 }
 );
 imageCloseBtn.addEventListener('click', ()=> {imageModal.style.display='none'})
+
+document.addEventListener('keydown',(e)=>{
+  if (e.key === 'Escape') {
+    imageModal.style.display='none'
+  }
+});
+
+imageModal.addEventListener('click', (e)=>{
+  console.log(e.target);//현재 이벤트가 발생한 대상 (사용자가 실제로 클릭한 가장 안쪽 요소)
+  console.log(e.currentTarget);//이벤트가 바인딩된 요소(여기선 imageModal), this와 동일
+  e.stopPropagation();
+  if (e.target === e.currentTarget)imageModal.style.display='none';
+});
+
+document.querySelector('.this-year').innerHTML = `${new Date().getFullYear()}`;
+
+const toTopEl = document.querySelector('#toTop');
+
+const vis = document.querySelector('.visual');
+const twinkle = vis.querySelectorAll('span');
+addEventListener('scroll',()=>{
+  // console.log(this.window.scrollY);
+  if(this.window.scrollY >= 500){
+    toTopEl.style = `opacity: 1; transform: translateX(0)`
+    twinkle.forEach(el => {el.classList.remove("animate-flash");
+    });
+  }
+  else{
+    toTopEl.style = `opacity: 0; transform: translateX(100px)`
+    twinkle.forEach(el => {el.classList.add("animate-flash");
+    });
+  }
+});
