@@ -20,7 +20,6 @@ const my = Math.round((e.offsetY / r.height) * 100);
       console.log('mx=',`${mx}%`)
       console.log('my=',`${my}%`)
     shine.style.setProperty('background-position',`${x/5 + y/5}%`);
-    shine.style.setProperty('filter',`brightness(1.2)`);
     card.style.setProperty('--rotX',`${rotateX}deg`);
     card.style.setProperty('--rotY',`${rotateY}deg`);
     shine.style.setProperty('--bgPos',`${(x/5 + y/5)}% ${(x/7 + y/9)}%`);
@@ -34,3 +33,4 @@ const my = Math.round((e.offsetY / r.height) * 100);
     card.style.setProperty('--rotX',`0`);
     card.style.setProperty('--rotY',`0`);
   })
+

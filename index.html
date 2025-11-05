@@ -3,6 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- 오픈 그래프와 트위터 카드 설정(링크의 프리뷰) -->
+  <!-- 오픈 그래프 -->
+  <!-- 웹페이지가 소셜미디어(카카오톡, 슬랙, 페이스북 등)로 공유될 때 우선적으로 활용되는 정보 -->
+  <!-- 
+    type: 사이트 타입(website로 고정하면 됨)
+    site_name: 웹사이트 이름, 브랜드 네임을 쓰면 좋음(ex. Goni's Portfolio, Goni.dev, MyPortfolio)
+    title: 현재 페이지의 제목
+    description: 간단한 소개(검색, 공유 시 미리보기에서 사용)
+    image: 썸네일 이미지(가장 중요함!), 절대 경로로 작성하는 것을 권장(https://부터 시작), 권장 크기(1200x630px 정도)
+    url: 현재 사이트의 대표 URL
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Goni's Portfolio" />
+  <meta property="og:title" content="Goni | Full Stack Developer" />
+  <meta property="og:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
+  <meta property="og:image" content="https://your-domain.com/images/thumbnail.png" />
+  <meta property="og:url" content="https://your-domain.com" />
+
+  <!-- 트위터 카드 -->
+  <!-- 웹페이지가 소셜미디어(트위터)로 공유될 때 우선적으로 활용되는 정보 -->
+  <!-- 
+    card: 카드 유형 지정
+      └summary: 작은 썸네일 + 텍스트 요약
+      └summary_large_image: 큰 썸네일 + 텍스트 요약
+  -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <!-- 계정 태그 노출용 작성자 트위터 계정(없으면 생략 가능) -->
+  <!-- <meta name="twitter:site" content="@your_twitter_handle" />
+  <meta name="twitter:creator" content="@your_twitter_handle" /> -->
+  <meta property="twitter:title" content="Goni | Full Stack Developer" />
+  <meta property="twitter:description" content="React, Node.js 기반의 웹 개발을 전문으로 하는 풀스택 개발자 포트폴리오입니다." />
+  <meta property="twitter:image" content="https://your-domain.com/images/thumbnail.png" />
+  <meta property="twitter:url" content="https://your-domain.com" />
+  
     <title>포트폴리오</title>
         <!--파비콘-->
     <!--파비콘(favicon.ico)은 프로젝트 최상위 폴더(Root) 경로에 포함시키면 자동으로 적용
@@ -25,11 +60,14 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/effect.css">
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script defer src="js/main.js"></script> <!--바디 태그 아래에 넣는 대신 defer 사용가능-->
     <script defer src="js/card.js"></script>
+
+    <script src="js/effect.js"></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -49,18 +87,21 @@
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
+      <a href="#" class="btn-hamburger">
+        <span class="material-symbols-outlined">Menu</span>
+      </a>
     </div>
   </header>
   <!-- VISUAL -->
   <!-- 첫 화면에 눈길을 끌 수 있는 자기소개 내용 담기 -->
-  <section class="visual">
+  <section class="visual scroll-spy">
     <div class="inner">
       <h1>
         <span class="animate-flash" style="animation-delay: 0.04s;">반</span>
           <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
           <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
           <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
-          &nbsp;
+          &nbsp;<br class="mobile-lf" style="display: none;">
           <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
           <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
           <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
@@ -69,13 +110,13 @@
           <span class="animate-flash purple" style="animation-delay: 0.28s;">어</span>
           <span class="animate-flash purple" style="animation-delay: 0.12s;">카</span>
           <span class="animate-flash purple" style="animation-delay: 0.15s;">드</span>
-          &nbsp;
+          &nbsp;<br class="mobile-lf" style="display: none;">
           <span class="animate-flash" style="animation-delay: 0.02s;">풀</span>
           <span class="animate-flash" style="animation-delay: 0.22s;">스</span>
           <span class="animate-flash" style="animation-delay: 0.17s;">택</span>
           <!-- <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
           <span class="animate-flash" style="animation-delay: 0.20s;">k</span> -->
-          &nbsp;<br class="mobile-lf" style="display: none;"><br>
+          &nbsp;<br>
           <span class="animate-flash" style="animation-delay: 0.11s;">디</span>
           <span class="animate-flash" style="animation-delay: 0.18s;">벨</span>
           <span class="animate-flash" style="animation-delay: 0.05s;">로</span>
@@ -84,51 +125,46 @@
           <span class="animate-flash purple" style="animation-delay: 0.09s;">백</span>
           <span class="animate-flash purple" style="animation-delay: 0.24s;">시</span>
           <span class="animate-flash purple" style="animation-delay: 0.28s;">현</span>
-          <!-- <span class="animate-flash purple" style="animation-delay: 0.14s;">e</span>
-          <span class="animate-flash purple" style="animation-delay: 0.25s;">r</span>
-          <br>
-          <span class="animate-flash purple" style="animation-delay: 0.10s;">백</span>
-          <span class="animate-flash purple" style="animation-delay: 0.16s;">시</span>
-          <span class="animate-flash purple" style="animation-delay: 0.24s;">현</span>
-          <span class="animate-flash" style="animation-delay: 0.12s;">입</span>
-          <span class="animate-flash" style="animation-delay: 0.15s;">니</span>
-          <span class="animate-flash" style="animation-delay: 0.05s;">다</span>
-          <span class="animate-flash" style="animation-delay: 0.13s;">.</span> -->
       </h1>
-      <div class="cardContainer">
-          <div class="card">
+      <div class="cardContainer animate-visualCard">
+          <div class="card front">
             <div class="card__shine"></div>
             <img src="/images/제목 없음-1.png" alt="">
+          </div>
+          <div class="back">
+            <img src="/images/자산 1.png" alt="">
           </div>
       </div>
     </div>
   </section>
   <section id="about" class="about">
-    <div class="inner">
-      <h2 class="title">ABOUT</h2>
-      <div class="about__wrapper">
-        <div class="about__img">
-          <!-- 본인 프로필 이미지 넣기 -->
-          <img src="/images/profile.jpg" alt="">
-        </div>
-        <!-- 본인 슬로건, 이름, 학력 또는 교육 사항 등 작성 -->
-        <div class="about__text">
-          <strong class="slogan">2성만 달아도 5성급</strong>
-          <h3>Baek Sihyeon (2002.04.01)</h3>
-          <div>
-            <h4>EDUCATION</h4>
-            <ul>
-              <li>2021.03 ~ 2024.03 (중퇴) 세종대학교 패션디자인학과</li>
-              <li>YYYY.MM ~ YYYY.MM (수료) 클라우드(AWS)활용 자바/스프링 개발 부트캠프</li>
-            </ul>
+    <div class="outer scroll-spy">
+      <div class="inner">
+        <h2 class="title">ABOUT</h2>
+        <div class="about__wrapper">
+          <div class="about__img">
+            <!-- 본인 프로필 이미지 넣기 -->
+            <img src="/images/profile.jpg" alt="">
+          </div>
+          <!-- 본인 슬로건, 이름, 학력 또는 교육 사항 등 작성 -->
+          <div class="about__text">
+            <strong class="slogan">2성만 달아도 5성급</strong>
+            <h3>Baek Sihyeon (2002.04.01)</h3>
+            <div>
+              <h4>EDUCATION</h4>
+              <ul>
+                <li>2021.03 ~ 2024.03 (중퇴) 세종대학교 패션디자인학과</li>
+                <li>YYYY.MM ~ YYYY.MM (수료) 클라우드(AWS)활용 자바/스프링 개발 부트캠프</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- 연락처 버튼 -->
-      <div class="about__btn">
-        <a href="#contact">
-          <img src="images/icon/icon_contact.png" alt="연락처">CONTACT
-        </a>
+        <!-- 연락처 버튼 -->
+        <div class="about__btn">
+          <a href="#contact">
+            <img src="images/icon/icon_contact.png" alt="연락처">CONTACT
+          </a>
+        </div>
       </div>
     </div>
   </section>
