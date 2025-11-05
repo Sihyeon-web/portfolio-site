@@ -195,12 +195,13 @@ header .btn-hamburger .material-symbols-outlined {
 
 .about > .outer.showWide >.inner{
   opacity: 1;
-  transition: 1s;
 }
 
 .about > .outer > .inner {
   position: relative;
   opacity: 0;
+  
+  transition: 1s;
 }
 .about .about__wrapper{
   display: flex;
@@ -556,6 +557,9 @@ footer .copyright{
   }
   .visual >.inner .mobile-lf{
     display: inline !important;
+  }
+  .visual >.inner > h1{
+    width: 150px;
   }
   .about {
     padding: 100px 0;

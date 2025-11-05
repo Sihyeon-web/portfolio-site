@@ -84,13 +84,15 @@ addEventListener('scroll',()=>{
   if(this.window.scrollY >= 500){
     toTopEl.style = `opacity: 1; transform: translateX(0)`;
     twinkle.forEach(el => {el.classList.remove("animate-flash");
-    cCon.classList.remove('show');
+    cCon.classList.remove('animate-visualCard');
     });
   }
   else{
     toTopEl.style = `opacity: 0; transform: translateX(100px)`;
     twinkle.forEach(el => {el.classList.add("animate-flash");
-    cCon.classList.add('show');
+    cCon.classList.add('animate-visualCard');
+    isAnimating = true;
+    console.log(isAnimating)
     });
   }
 });
@@ -107,3 +109,4 @@ const  closeHam = document.querySelectorAll('header nav ul li a')
 closeHam.forEach((el)=>{
   el.addEventListener('click',()=>{navEl.classList.toggle('shuter')})
 });
+
