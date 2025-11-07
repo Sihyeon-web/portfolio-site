@@ -13,16 +13,6 @@ spyEls.forEach(function(spyEl){
   .addTo(controller); //컨트롤러에 장면을 할당(필수)
 });
 
-const divSpy = document.querySelectorAll('div.scroll-spy');
-
-divSpy.forEach((el)=>{
-  new ScrollMagic.Scene({
-    triggerElement: el,
-    triggerHook: 0.3
-  })
-  .setClassToggle(el, 'showWide')
-  .addTo(controller);
-})
 
 
 
@@ -81,10 +71,11 @@ const cCon = vis.querySelector('.cardContainer')
 const twinkle = vis.querySelectorAll('span');
 addEventListener('scroll',()=>{
   // console.log(this.window.scrollY);
-  if(this.window.scrollY >= 500){
+  if(this.window.scrollY >= 700){
     toTopEl.style = `opacity: 1; transform: translateX(0)`;
     twinkle.forEach(el => {el.classList.remove("animate-flash");
     cCon.classList.remove('animate-visualCard');
+    cCon.classList.remove('card-idle');
     });
   }
   else{
@@ -92,7 +83,7 @@ addEventListener('scroll',()=>{
     twinkle.forEach(el => {el.classList.add("animate-flash");
     cCon.classList.add('animate-visualCard');
     isAnimating = true;
-    console.log(isAnimating)
+    // console.log(isAnimating)
     });
   }
 });
@@ -100,13 +91,16 @@ addEventListener('scroll',()=>{
 const hamburger = document.querySelector('.btn-hamburger');
 const navEl = document.querySelector('header nav');
 
-hamburger.addEventListener('click',()=>{
+hamburger.addEventListener('click',(e)=>{
+  e.stopPropagation();
   navEl.classList.toggle('shuter')
 });
 
 
 const  closeHam = document.querySelectorAll('header nav ul li a')
 closeHam.forEach((el)=>{
-  el.addEventListener('click',()=>{navEl.classList.toggle('shuter')})
+  el.addEventListener('click',(e)=>{
+    e.stopPropagation();
+    navEl.classList.toggle('shuter')})
 });
 

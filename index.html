@@ -62,14 +62,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/effect.css">
     <link rel="stylesheet" href="css/sub.css">
+    <link rel="stylesheet" href="css/baneunghyung.css">
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script defer src="js/main.js"></script> <!--바디 태그 아래에 넣는 대신 defer 사용가능-->
     <script defer src="js/card.js"></script>
-
-    <script src="js/effect.js"></script>
+    <script defer src="js/effect.js"></script>
+    <script defer src="js/about.js"></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -89,9 +90,9 @@
           <li><a href="#contact">CONTACT</a></li>
         </ul>
       </nav>
-      <a href="#" class="btn-hamburger">
+      <div class="btn-hamburger">
         <span class="material-symbols-outlined">Menu</span>
-      </a>
+      </div>
     </div>
   </header>
   <!-- VISUAL -->
@@ -103,7 +104,8 @@
           <span class="animate-flash" style="animation-delay: 0.26s;">짝</span>
           <span class="animate-flash" style="animation-delay: 0.08s;">반</span>
           <span class="animate-flash" style="animation-delay: 0.02s;">짝</span>
-          &nbsp;<br class="mobile-lf" style="display: none;">
+          <span class="notForMobile">&nbsp;</span>
+          <br class="mobile-lf" style="display: none;">
           <span class="animate-flash purple" style="animation-delay: 0.26s;">빛</span>
           <span class="animate-flash purple" style="animation-delay: 0.06s;">나</span>
           <span class="animate-flash purple" style="animation-delay: 0.14s;">는</span>
@@ -112,51 +114,53 @@
           <span class="animate-flash purple" style="animation-delay: 0.28s;">어</span>
           <span class="animate-flash purple" style="animation-delay: 0.12s;">카</span>
           <span class="animate-flash purple" style="animation-delay: 0.15s;">드</span>
-          &nbsp;<br class="mobile-lf" style="display: none;">
+          <span class="notForMobile">&nbsp;</span>
+          <br class="mobile-lf" style="display: none;">
           <span class="animate-flash" style="animation-delay: 0.02s;">풀</span>
           <span class="animate-flash" style="animation-delay: 0.22s;">스</span>
           <span class="animate-flash" style="animation-delay: 0.17s;">택</span>
-          <!-- <span class="animate-flash" style="animation-delay: 0.19s;">c</span>
-          <span class="animate-flash" style="animation-delay: 0.20s;">k</span> -->
-          &nbsp;<br>
+          <span class="notForMobile">&nbsp;</span><br>
           <span class="animate-flash" style="animation-delay: 0.11s;">디</span>
           <span class="animate-flash" style="animation-delay: 0.18s;">벨</span>
           <span class="animate-flash" style="animation-delay: 0.05s;">로</span>
           <span class="animate-flash" style="animation-delay: 0.06s;">퍼</span>
-          &nbsp;<br class="mobile-lf" style="display: none;">
+          <span class="notForMobile">&nbsp;</span>
+          <br class="mobile-lf" style="display: none;">
           <span class="animate-flash purple" style="animation-delay: 0.09s;">백</span>
           <span class="animate-flash purple" style="animation-delay: 0.24s;">시</span>
           <span class="animate-flash purple" style="animation-delay: 0.28s;">현</span>
       </h1>
       <a class="cardContainer animate-visualCard" href="#about">
-          <div class="card front">
-            <div class="card__shine"></div>
-            <img class="profilePic" src="/images/제목 없음-1.png" alt="">
-          </div>
-          <div class="back">
-            <img src="/images/자산 1.png" alt="">
-          </div>
-        </a>
+        <div class="card front">
+          <div class="card__shine"></div>
+          <img class='profilePor' src="/images/profileR.jpg" alt="">
+          <img class="profilePic" src="/images/별로다2.png" alt="">
+        </div>
+        <div class="back">
+          <img src="/images/좋은게없다.png" alt="">
+        </div>
+      </a>
     </div>
   </section>
   <section id="about" class="about">
-    <div class="outer scroll-spy">
-      <div class="inner">
+    <div class="outer scroll-spy forScroll">
+      <div class="inner see">
         <h2 class="title">ABOUT</h2>
         <div class="about__wrapper">
-          <div class="about__img">
-            <!-- 본인 프로필 이미지 넣기 -->
-            <img src="/images/profile.jpg" alt="">
-          </div>
+          <a class="about__img" href="#skill">
+            <img src="/images/profileR.jpg" alt="">
+          </a>
           <!-- 본인 슬로건, 이름, 학력 또는 교육 사항 등 작성 -->
           <div class="about__text">
-            <strong class="slogan">2성만 달아도 5성급</strong>
+            <strong class="slogan notForMobile">2성까지 키워도 5성급</strong>
             <h3>Baek Sihyeon (2002.04.01)</h3>
             <div>
-              <h4>EDUCATION</h4>
+              <h4 class="notForMobile">EDUCATION</h4>
               <ul>
-                <li>2021.03 ~ 2024.03 (중퇴) 세종대학교 패션디자인학과</li>
-                <li>YYYY.MM ~ YYYY.MM (수료) 클라우드(AWS)활용 자바/스프링 개발 부트캠프</li>
+                <li>
+                  <span class="notForMobile">2021.03 ~ 2024.03 (중퇴)</span> 세종대학교 패션디자인학과</li>
+                <li>
+                  <span class="notForMobile">YYYY.MM ~ YYYY.MM (수료)</span> 클라우드(AWS)활용 자바/스프링 개발 부트캠프</li>
               </ul>
             </div>
           </div>
@@ -168,9 +172,14 @@
           </a>
         </div>
       </div>
+      <div class="beforeC">
+        <div class="beforeC beforeC__img">
+          <img class='profilePor' src="/images/profileR.jpg" alt="">
+        </div>
+      </div>
     </div>
   </section>
-  <section id="skill" class="skill scroll-spy">
+  <section id="skill" class="skill scroll-spy forScroll">
     <div class="inner">
       <h2 class="title">SKILL</h2>
       <ul class="skill__list">
@@ -228,7 +237,6 @@
       <h2 class="title">PROJECT</h2>
       <div class="port">
         <div class="port__img">
-          <!-- 이미지 슬라이드 -->
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
@@ -349,5 +357,8 @@
       <span class="material-symbols-outlined">arrow_upward</span>
     </a>
   </div>
+
+
+  
 </body>
 </html>
